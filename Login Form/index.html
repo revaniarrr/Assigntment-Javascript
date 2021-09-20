@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Javascript</title>
+
+    <!-- call bootstrap style -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Javascript area -->
+    <script>
+        function buttonClick (){
+            alert("Belajar Javascript itu membuat pusing");
+        }
+        function confirmation (){
+            let konfirmasi = confirm("Apakah anda suka mempelajari web?");
+            if (konfirmasi === true) {
+                alert("Kamu akan semangat jika menyukainya");
+            } else {
+                alert("Kamu tidak akan semangat jika tidak menyukainya");
+            }
+        }
+        function getName (){
+            let name = prompt("Silahkan masukkan nama anda");
+            alert("Hi, " + name + ". Selamat datang!");
+        }
+
+        // let digunakan untuk deklarasi variable
+        // yang menyimpang berbagai tipe data 
+        
+        function hitungLuas(){
+            let alas = document.getElementById("alas_segitiga").value;
+            let tinggi = document.getElementById("tinggi_segitiga").value;
+            // Number digunakan untuk komversi ke bentuk numerik
+            let hasil = 0.5 * Number(alas) * Number(tinggi);
+            document.getElementById("result").innerHTML =
+            "Luas Segitiga adalah " + hasil;
+        }
+
+        // perbedaan .value dan .innerHTML
+        // .value --> jika element yang dipanggil berupa <input> / <select>
+        // .innerHTML ==> jika element yang dipanggil berupa isi
+        // yang ada di dalam tag HTML 
+
+    </script>
+</head>
+<body>
+    <button onClick="buttonClick()" class="btn btn-danger">
+        Click Me 
+    </button>
+
+    <button class="btn btn-success" onClick="confirmation()">
+        Click for confirmation!
+    </button>
+
+    <button class="btn btn-warning" onClick="getName()">
+        Please fill your name here
+    </button>
+
+    <!-- card menghitung luas dan keliling segitiga -->
+    <div class="card col-lg-3 col-md-6 m-2">
+        <!-- card header -->
+        <div class="card-header bg-info">
+            <h3 class="text-black">Hitung Segitiga</h3>
+        </div>
+
+        <!-- card body-->
+        <div class="card-body">
+            Masukka nilai alas segitiga
+            <input type="number" class="form-control mb-2" id="alas_segitiga"/>
+
+            Masukka nilai tinggi segitiga
+            <input type="number" class="form-control mb-2" id="tinggi_segitiga"/>
+
+            <button class="btn btn-primary btn-block" onClick="hitungLuas()">
+                Hitung Luas
+            </button>
+        </div>
+
+        <!-- card footer-->
+        <div class="card-footer">
+            <!-- show result -->
+            <h5 class="text-info" id="result"></h5>
+                <!-- inner dari h5 -->
+        </div>
+    </div>
+</body>
+</html>
